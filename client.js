@@ -9,8 +9,8 @@ if ('serviceWorker' in navigator) {
 async function registerServiceWorkerAndSubscribe() {
     // Register Service Worker
     console.log('Registering service worker...');
-    const registration = await navigator.serviceWorker.register('./worker.js', {
-        scope: './'
+    const registration = await navigator.serviceWorker.register('/pwa-nda/worker.js', {
+        scope: '/pwa-nda/'
     });
 
     console.log('Service Worker Registered...');
@@ -28,7 +28,7 @@ async function registerServiceWorkerAndSubscribe() {
 
     // Send Push Notification
     console.log("Sending Push...");
-    await fetch("/subscribe", {
+    await fetch("/pwa-nda/subscribe", {
         method: "POST",
         body: JSON.stringify(subscription),
         headers: {
