@@ -1,6 +1,5 @@
 const publicVapidKey = 'BCRndj3xy22bI2uTzqXcUXDYretU47YZ84gPxctPQh258wgo6E-LNs54mXpYWLwxrTG53MiPk6ad3hdvqy48Qoc';
 
-// Check for service worker
 if ('serviceWorker' in navigator) {
     registerServiceWorkerAndSubscribe().catch(err => console.error(err));
 }
@@ -9,8 +8,8 @@ if ('serviceWorker' in navigator) {
 async function registerServiceWorkerAndSubscribe() {
     // Register Service Worker
     console.log('Registering service worker...');
-    const registration = await navigator.serviceWorker.register('/pwa-nda/worker.js', {
-        scope: '/pwa-nda/'
+    const registration = await navigator.serviceWorker.register('/worker.js', {
+        scope: '/'
     });
 
     console.log('Service Worker Registered...');
@@ -28,7 +27,7 @@ async function registerServiceWorkerAndSubscribe() {
 
     // Send Push Notification
     console.log("Sending Push...");
-    await fetch("/pwa-nda/subscribe", {
+    await fetch("https://perederiy.space/subscribe", {
         method: "POST",
         body: JSON.stringify(subscription),
         headers: {
