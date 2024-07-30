@@ -1,0 +1,16 @@
+{
+    "name": "PWA",
+    "short_name": "PWA",
+    "start_url": "./redirect.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "description": "This is my PWA",
+    "icons": [
+        {
+            "src": "icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
