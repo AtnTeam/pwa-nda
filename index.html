@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Push Notification</title>
-    <link rel="manifest" href="manifest.json">
+ <link rel="manifest" href="/pwa-nda/manifest.json">
 </head>
 
 <body>
     <h1>Push Notification</h1>
     <button class="button header__action pwa-install-button pwa-install-button_visible"> <i
             class="icon icon_install"></i> Install as PWA </button>
-    <script src="client.js"></script>
+   <script src="/pwa-nda/client.js"></script>
     <script>const e = document.querySelector(".pwa-install-button"); if ("BeforeInstallPromptEvent" in window) { let t = null, a = () => { e.disabled = !0, t = null }; window.addEventListener("beforeinstallprompt", a => { a.preventDefault(), t = a, e.disabled = !1 }), e.addEventListener("click", async () => { t && (t.prompt(), "accepted" === (await t.userChoice).outcome && a()) }), window.addEventListener("appinstalled", () => { a() }) } async function t() { "getInstalledRelatedApps" in navigator && (await navigator.getInstalledRelatedApps()).length > 0 && (e.disabled = !0, e.classList.add("hidden")) } (async () => { await t() })();</script>
 </body>
 
